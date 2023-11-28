@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>QR</title>
+</head>
+<body>
+    <div class="container">
+        <h1>ENTER YOUR QR</h1>
+        <input type="text" placeholder="enter your QR" id="qr"><br>
+        <div>
+            <img>
+        </div>
+        <button onclick="QR()">Looking</button>
+    </div>
+    <script>
+         function QR() {
+        // داخل الدالة نقوم بالحصول على قيمة الإدخال
+        let val = document.querySelector("#qr").value;
+        let img = document.querySelector("img");
+
+        // نقوم بتحديث مصدر الصورة
+        img.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + val;
+        img.classList.add('da');
+        $(img).fadeIn(500);
+    }
+
+    </script>
+</body>
+</html>
